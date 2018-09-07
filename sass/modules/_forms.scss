@@ -1,0 +1,174 @@
+// Forms
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+  background: transparent;
+  //border: 1px solid lighten($border-color, 8.8%);
+  //border-radius: $global-radius;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+// Removes awkward default styles on some inputs for iOS
+input {
+  &[type="email"],
+  &[type="number"],
+  &[type="search"],
+  &[type="text"],
+  &[type="tel"],
+  &[type="url"],
+  &[type="password"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+input {
+  &[type="email"]:focus,
+  &[type="number"]:focus,
+  &[type="search"]:focus,
+  &[type="text"]:focus,
+  &[type="tel"]:focus,
+  &[type="url"]:focus,
+  &[type="password"]:focus {
+   //  border: 1px solid $grey;
+   //  outline: 0;
+  }
+}
+
+textarea:focus,
+select:focus {
+ // border: 1px solid $primary-color;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input {
+  &[type="checkbox"],
+  &[type="radio"] {
+    display: inline;
+  }
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal;
+}
+
+.name-fields{
+   float: left;
+   width: 50%;
+   &.first{
+      padding-right: 20px;
+   }
+   @media screen and ($bp-smaller-than-tablet){
+      float: none;
+      width: 100%;
+      &.first{
+         padding-right: 0px;
+      }
+   }
+}
+
+input{
+   border-bottom: 2px solid $white;
+   border-left: 0;
+   border-right: 0;
+   border-top: 0;
+   background: transparent;
+   color: $white;
+   //font-family: $primary_font;
+   font-size: 2rem;
+   font-weight: 400;
+   margin-bottom: 20px;
+   &:focus{
+      outline: none;
+   }
+   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+     color: $white;
+   }
+   &::-moz-placeholder { /* Firefox 19+ */
+     color: $white;
+   }
+   &:-ms-input-placeholder { /* IE 10+ */
+     color: $white;
+   }
+   &:-moz-placeholder { /* Firefox 18- */
+     color: $white;
+   }
+   &[type="text"], &[type="email"]{
+      // padding: 20px 40px;
+      height: 50px;
+   }
+   &[type="text"]{
+      display: block;
+      width: 100%;
+   }
+   &[type="email"]{
+      width: 100%;
+   }
+   &[type="submit"]{
+      text-transform: none;
+      font-size: 2rem;
+      height: 50px;
+      float: left;
+      transition: all 0.2s ease-in-out;
+      background-color: $white;
+      width: 160px;
+      text-align: left;
+      padding-left: 14px;
+      // @media screen and ($bp-smaller-than-tablet){
+      //    float: left;
+      // }
+      &:hover{
+         color: $white;
+         background-color: transparent;
+         // color: $primary_color;
+      }
+   }
+}
+
+.panel{
+   span.wpcf7-not-valid-tip{
+      color: $white;
+   }
+}
+
+textarea{
+   border: 2px solid $white;
+   background: transparent;
+   color: $white;
+   //font-family: $primary_font;
+   font-size: 2rem;
+   font-weight: 400;
+   margin-bottom: 20px;
+   width: 100%;
+   max-width: 100%;
+   max-height: 400px;
+   padding: 6px 10px;
+}
