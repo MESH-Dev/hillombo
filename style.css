@@ -1039,6 +1039,11 @@ header {
   text-decoration: none;
 }
 
+/* line 93, sass/modules/_header.scss */
+.sub-menu {
+  display: none;
+}
+
 /* line 1, sass/modules/_footer.scss */
 footer {
   color: #FFFFFF;
