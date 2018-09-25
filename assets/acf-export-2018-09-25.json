@@ -436,7 +436,7 @@
                 "label": "Background Image",
                 "name": "background_image",
                 "type": "image",
-                "instructions": "Choose an image to be used as the background of the Welcome Gate: the first panel of the website. This image should be 2000px wide or wider and 1300px tall or taller, with no sharp pattern or eye-catching point of interest that distracts from the site's title, which will be over top of the image.",
+                "instructions": "Choose an image to be used as the background of the Hero Panel: the first panel of the page. This image should be 2000px wide or wider and 1300px tall or taller, with no sharp pattern or eye-catching point of interest that distracts from the page's title, which will be over top of the image.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -454,6 +454,25 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
+            },
+            {
+                "key": "field_5baa9665ed4ad",
+                "label": "Background Image Filter",
+                "name": "bg_img_filter",
+                "type": "true_false",
+                "instructions": "If you entered a background image for the hero panel, choose whether it should have a transparent filter over it that matches the primary color of your color scheme. This will make the hero panel text more legible and will keep site design consistent. Default is ON. Only turn this off if it obscures important aspects of the background photo or if you plan to not use text.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
             }
         ],
         "location": [
@@ -573,7 +592,7 @@
                         "label": "Item Description",
                         "name": "item_description",
                         "type": "text",
-                        "instructions": "",
+                        "instructions": "347 char max including spaces",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -585,7 +604,7 @@
                         "placeholder": "",
                         "prepend": "",
                         "append": "",
-                        "maxlength": ""
+                        "maxlength": 347
                     },
                     {
                         "key": "field_5b43ccab056a5",
@@ -604,7 +623,7 @@
                         "placeholder": "",
                         "prepend": "",
                         "append": "",
-                        "maxlength": ""
+                        "maxlength": 24
                     },
                     {
                         "key": "field_5b43ccb1056a6",
@@ -736,7 +755,9 @@
                             "cards": "Cards Panel",
                             "wysiwyg": "Text Panel"
                         },
-                        "default_value": [],
+                        "default_value": [
+
+                        ],
                         "allow_null": 0,
                         "multiple": 0,
                         "ui": 0,
@@ -1212,6 +1233,25 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
+            },
+            {
+                "key": "field_5baa962725132",
+                "label": "Background Image Filter",
+                "name": "bg_img_filter",
+                "type": "true_false",
+                "instructions": "If you entered a background image for the welcome gate, choose whether it should have a transparent filter over it that matches the primary color of your color scheme. This will make the welcome gate text more legible and will keep site design consistent. Default is ON. Only turn this off if it obscures important aspects of the background photo or if you plan to not use text.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
             }
         ],
         "location": [

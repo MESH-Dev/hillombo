@@ -4,7 +4,8 @@
 <main id="content">
 	<?php
 	$bg_img = get_field('background_image');
-	$bg_url = $bg_img['sizes']['background-fullscreen'];
+	$bg_url = $bg_img['url'];
+	$bg_filter = get_field('bg_img_filter');
 
 	$primary_color = get_field('primary_color', 'option');
 		$secondary_color = get_field('secondary_color', 'option');
@@ -12,8 +13,10 @@
 
 	if (!empty($bg_url)) { ?>
 		<div class="welcome-gate" id="top">
-			<div class="hero" style="background-image:url('<?php echo $bg_url ?>')"></div>
-			<div class="img-filter" style="background-color:<?php echo $primary_color ?>;"></div>
+			<div class="hero" style="
+			<?php if ($bg_filter == false): echo 'filter:none;'; endif; ?>
+			background-image:url('<?php echo $bg_url ?>');"></div>
+			<div class="img-filter" <?php if ($bg_filter): ?> style="background-color:<?php echo $primary_color ?>;"<?php endif; ?>></div>
 	<?php } else{ ?>
 		<div class="welcome-gate" id="top" style="background:<?php echo $primary_color ?>;">
 	<?php }; ?>
