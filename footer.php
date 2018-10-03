@@ -2,8 +2,10 @@
 <?php
 $primary_color = get_field('primary_color', 'option');
 $secondary_color = get_field('secondary_color', 'option');
+$custom_color_switch = get_field('custom_color_on_or_off', 'option');
+$custom_footer_color = get_field('custom_footer_color', 'option');
 ?>
-<footer id="footer" class="panel site-footer primary" style="background-color:<?php echo $secondary_color ?>;">
+<footer id="footer" class="panel site-footer primary" style="background-color:<?php if($custom_color_switch){echo $custom_footer_color;}else{echo $primary_color;};?>;">
 
 	<div class="container">
 		<div class="row">

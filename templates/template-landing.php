@@ -11,14 +11,17 @@
 		$secondary_color = get_field('secondary_color', 'option');
 		$tertiary_color = get_field('tertiary_color', 'options');
 
+		$welcome_color_switch = get_field('welcome_gate_custom_color_on_or_off');
+		$welcome_color = get_field('welcome_gate_custom_color');
+
 	if (!empty($bg_url)) { ?>
 		<div class="welcome-gate short" id="top">
 			<div class="hero" style="
 			<?php if ($bg_filter == false): echo 'filter:none;'; endif; ?>
 			background-image:url('<?php echo $bg_url ?>');"></div>
-			<div class="img-filter" <?php if ($bg_filter): ?> style="background-color:<?php echo $primary_color ?>;"<?php endif; ?>></div>
+			<div class="img-filter" <?php if ($bg_filter): ?> style="background-color:<?php if($welcome_color_switch){echo $welcome_color;}else{echo $primary_color;};?>;"<?php endif; ?>></div>
 	<?php } else{ ?>
-		<div class="welcome-gate short" id="top" style="background:<?php echo $primary_color ?>;">
+		<div class="welcome-gate short" id="top" style="background:<?php if($welcome_color_switch){echo $welcome_color;}else{echo $primary_color;};?>;">
 	<?php }; ?>
 		<div class="container">
 			<div class="row">

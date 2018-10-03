@@ -18,6 +18,11 @@
             h1{
                margin: 0;
             }
+            img{
+               width: auto;
+               max-height: 400px;
+               max-width: 100%;
+            }
          }
       }
    }
@@ -45,6 +50,11 @@
       //font-family: $secondary_font;
       max-width: 845px;
       margin: 0 auto;
+      img{
+         width: auto;
+         max-height: 400px;
+         max-width: 100%;
+      }
       h1{
          // font-family: $av-italic;
          letter-spacing: 2.5px;
@@ -84,7 +94,7 @@
 }
 
 .breadcrumbs, .panel.wysiwyg .breadcrumbs{
-   font-family: 'Montserrat', sans-serif;
+   // font-family: 'Montserrat', sans-serif;
    font-weight: 400;
    font-size: 1.4rem;
    letter-spacing: 0.41px;
@@ -510,53 +520,4 @@
 
 .clearfix{
    clear: both;
-}
-
-.categories, .tags, .info, .read-more, .paginated{
-   a{
-      font-weight: 400;
-      color: $grey;
-      font-size: 1.4rem;
-      text-decoration: underline;
-      transition: opacity 0.2s ease-in-out;
-      &:hover,&:active,&:focus{
-         text-decoration: none;
-         opacity: 0.8;
-      }
-   }
-}
-
-.read-more{
-font-weight: 400;
-      color: $grey;
-      font-size: 1.4rem;
-      text-decoration: underline;
-      transition: opacity 0.2s ease-in-out;
-      &:hover,&:active,&:focus{
-         text-decoration: none;
-         opacity: 0.8;
-      }
-}
-
-.post-title{
-   a{
-      text-decoration:none;
-      transition: opacity 0.2s ease-in-out;
-      color:$black;
-      &:hover,&:active,&:focus{
-         text-decoration: none;
-         opacity: 0.6;
-      }
-   }
-}
-
-.posts{
-   margin:1em 0 4em 0;
-   min-height:600px;
-}
-
-.post{
-   padding-bottom:2em;
-   margin-bottom:2em;
-   border-bottom:1px solid $grey;
 }

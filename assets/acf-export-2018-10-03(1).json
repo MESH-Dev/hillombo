@@ -249,12 +249,12 @@
                     "id": ""
                 },
                 "choices": {
-                    "1": "Merriweather and Montserrat",
-                    "2": "Montserrat and Playfair Display",
-                    "3": "Ubuntu and Zilla Slab",
-                    "4": "IBM Plex Serif and Merriweather",
-                    "5": "Muli and Raleway",
-                    "6": "Zilla Slab and Open Sans"
+                    "1": "Karla Bold and Karla Regular",
+                    "2": "Quando and Karla",
+                    "3": "Abel and Karla",
+                    "4": "Noto Serif Black and Noto Serif Light",
+                    "5": "Abril Fatface and Cabin",
+                    "6": "Alfa Slab and Bitter"
                 },
                 "default_value": [
                     1
@@ -262,8 +262,8 @@
                 "allow_null": 0,
                 "multiple": 0,
                 "ui": 0,
-                "ajax": 0,
                 "return_format": "value",
+                "ajax": 0,
                 "placeholder": ""
             },
             {
@@ -271,7 +271,7 @@
                 "label": "Primary Color",
                 "name": "primary_color",
                 "type": "color_picker",
-                "instructions": "Enter the site's primary color. This color will be used for major components such as the navigation, footer, and welcome gate panel. Once this is entered correctly, it is recommended to make no changes.",
+                "instructions": "Enter the site's primary color. This color will be used for major components such as the navigation, footer, and welcome gate panel, as well as Heading 1 and Heading 4 text. Once this is entered correctly, it is recommended to make no changes.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -286,7 +286,7 @@
                 "label": "Secondary Color",
                 "name": "secondary_color",
                 "type": "color_picker",
-                "instructions": "Enter the site's secondary color. This color will be used for secondary components such as icon panels. Once this is entered correctly, it is recommended to make no changes.",
+                "instructions": "Enter the site's secondary color. This color will be used for secondary components such as icon panel backgrounds, icon panel background image filters, and Heading 2 text. Once this is entered correctly, it is recommended to make no changes.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -301,7 +301,7 @@
                 "label": "Tertiary Color",
                 "name": "tertiary_color",
                 "type": "color_picker",
-                "instructions": "Enter the site's tertiary color. This color will be used for links and buttons in the intro or text panels. Once this is entered correctly, it is recommended to make no changes.",
+                "instructions": "Enter the site's tertiary color. This color will be used for links and buttons in the intro or text panels, as well as Heading 3 and Heading 5 text. Once this is entered correctly, it is recommended to make no changes.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -386,6 +386,90 @@
                 "prepend": "",
                 "append": "",
                 "maxlength": ""
+            },
+            {
+                "key": "field_5bb52c5c5114f",
+                "label": "Custom Footer Color On or Off",
+                "name": "custom_color_on_or_off",
+                "type": "true_false",
+                "instructions": "Turn this on to add a custom color to the footer, independent of the site's main color scheme.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bb52c7a51150",
+                "label": "Custom Footer Color",
+                "name": "custom_footer_color",
+                "type": "color_picker",
+                "instructions": "After turning on footer custom color, enter the custom color here.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5bb52c5c5114f",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
+            },
+            {
+                "key": "field_5bb52ce051151",
+                "label": "Custom Nav Color On or Off",
+                "name": "custom_nav_color_on_or_off",
+                "type": "true_false",
+                "instructions": "To use a custom color for your site navigation, independent of the site's main color scheme, turn this on then enter your custom color.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bb52d4851152",
+                "label": "Custom Nav Color",
+                "name": "custom_nav_color",
+                "type": "color_picker",
+                "instructions": "After turning on custom nav color, enter your custom color here.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5bb52ce051151",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
             }
         ],
         "location": [
@@ -473,6 +557,48 @@
                 "ui": 1,
                 "ui_on_text": "On",
                 "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bb516bab2278",
+                "label": "Welcome Gate Custom Color On or Off",
+                "name": "welcome_gate_custom_color_on_or_off",
+                "type": "true_false",
+                "instructions": "To use a custom color for the welcome gate, first turn this on.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bb516c0b2279",
+                "label": "Welcome Gate Custom Color",
+                "name": "welcome_gate_custom_color",
+                "type": "color_picker",
+                "instructions": "After turning on custom color, enter your custom welcome gate color here.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5bb516bab2278",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
             }
         ],
         "location": [
@@ -755,9 +881,7 @@
                             "cards": "Cards Panel",
                             "wysiwyg": "Text Panel"
                         },
-                        "default_value": [
-
-                        ],
+                        "default_value": [],
                         "allow_null": 0,
                         "multiple": 0,
                         "ui": 0,
@@ -999,7 +1123,7 @@
                                 "label": "Card Blurb",
                                 "name": "card_blurb",
                                 "type": "text",
-                                "instructions": "Enter a blurb, or description text, for this card. This text should be relevant to the card's other content, including its image and title. Text is limited to 265 characters including spaces.",
+                                "instructions": "Enter a blurb, or description text, for this card. This text should be relevant to the card's other content, including its image and title. Text is recommended to be 265 characters maximum including spaces.",
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -1011,7 +1135,7 @@
                                 "placeholder": "",
                                 "prepend": "",
                                 "append": "",
-                                "maxlength": 265
+                                "maxlength": ""
                             },
                             {
                                 "key": "field_5ab2c02cba786",
@@ -1211,6 +1335,30 @@
                 "maxlength": 600
             },
             {
+                "key": "field_5babf65f842eb",
+                "label": "Logo Graphic",
+                "name": "logo_graphic",
+                "type": "image",
+                "instructions": "To use a logo graphic in the welcome gate instead of text, enter an image from your media library here. To switch back to text, clear the image entered here. It is recommended to not use an image wider than 1200px or taller than 500px.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
                 "key": "field_5ab3d6907b871",
                 "label": "Background Image",
                 "name": "background_image",
@@ -1235,8 +1383,8 @@
                 "mime_types": ""
             },
             {
-                "key": "field_5baa962725132",
-                "label": "Background Image Filter",
+                "key": "field_5baa899215736",
+                "label": "Backgorund Image Filter",
                 "name": "bg_img_filter",
                 "type": "true_false",
                 "instructions": "If you entered a background image for the welcome gate, choose whether it should have a transparent filter over it that matches the primary color of your color scheme. This will make the welcome gate text more legible and will keep site design consistent. Default is ON. Only turn this off if it obscures important aspects of the background photo or if you plan to not use text.",
@@ -1252,12 +1400,54 @@
                 "ui": 1,
                 "ui_on_text": "On",
                 "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bac110683ebd",
+                "label": "Welcome Gate Custom Color On or Off",
+                "name": "welcome_gate_custom_color_on_or_off",
+                "type": "true_false",
+                "instructions": "To use a custom color for the welcome gate, first turn this on.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bac113483ebe",
+                "label": "Welcome Gate Custom Color",
+                "name": "welcome_gate_custom_color",
+                "type": "color_picker",
+                "instructions": "After turning on custom color, enter your custom welcome gate color here.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5bac110683ebd",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
             }
         ],
         "location": [
             [
                 {
-                    "param": "page_template",
+                    "param": "post_template",
                     "operator": "==",
                     "value": "templates\/template-home.php"
                 }
