@@ -106,7 +106,7 @@
 						</div>
 						<?php
 						if ($card_cnt % 3 == 0) {
-						  echo '</div><div class="row">';
+						  echo '</div><div class="row listing grid">';
 					  } elseif($card_cnt == $card_num){?>
 						  </div><!--end final row -->
 					  <?php }
