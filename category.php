@@ -26,12 +26,12 @@
 		</div>
 	</div>
 	<div class="">
-		<div class="container">
+		<div class="container panel wysiwyg">
 	 			<div class="row posts">
 				<div class="columns-10"><!-- columns-9 -->
 
 					<?php if ( have_posts() ) : ?>
-						
+
 
 						<p class="breadcrumbs"><?php echo the_breadcrumb(); ?></p>
 
