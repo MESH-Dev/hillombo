@@ -25,7 +25,7 @@
 		</div>
 	</div>
 
-	<div class="panel page"><!-- wysiwyg -->
+	<div class="panel page wysiwyg">
 		<div class="container">
 			<div class="row">
 				<p class="breadcrumbs">
@@ -57,14 +57,14 @@
 					<p class="info">By: <?php the_author(); ?> | <?php echo the_date(); ?> | <?php the_category(', '); ?> </p>
 
 					<?php the_content(); ?>
-					
+
 					<?php
 
 					$tags = wp_get_post_tags($post->ID);
 					//ar_dump($tags);
 					$post_tags = '';
 					foreach($tags as $tag){
-						$post_tags .= $tag->name.$separator; 
+						$post_tags .= $tag->name.$separator;
 					}
 
 					 ?>
@@ -72,7 +72,7 @@
 					<?php echo get_the_tag_list('<p class="tags">Tags: ',', ','</p>');?>
 					</p>
 				<?php endwhile; ?>
-			
+
 			</div>
 		</div>
 	</div>

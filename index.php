@@ -1,4 +1,4 @@
-<?php get_header(); 
+<?php get_header();
 /* Template Name: Blog Archive Template*/
 ?>
 
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="sign sf">
 					<h1 id="welcomeTitle" class="pf">
-						
+
 						<?php if ( is_day() ) : ?>
 							<?php printf( __( 'Daily News Articles: <span>%s</span>' ), get_the_date() ); ?>
 						<?php elseif ( is_month() ) : ?>
@@ -32,21 +32,21 @@
 						<?php else : ?>
 							<?php _e( 'News' ); ?>
 						<?php endif; ?>
-					
+
 					</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container panel wysiwyg">
  		<div class="row posts">
  			<div class="columns-10">
-	
+
 				<?php if ( have_posts() ) : ?>
-					
+
 					<p class="breadcrumbs"><?php echo the_breadcrumb(); ?></p>
 
-					<?php 
+					<?php
 
 						$args = array(
 							'post_type' => 'post',
@@ -81,8 +81,8 @@
 					?>
 				</div>
 			</div><!-- end columns 9 -->
-		</div>	
- 
+		</div>
+
 	</div>
 
 </main><!-- End of Content -->
