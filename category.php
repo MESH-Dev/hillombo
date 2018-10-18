@@ -2,8 +2,9 @@
 
 <main id="content">
 	<?php
-	$bg_img = get_field('background_image', 'option');
+	$bg_img = get_field('blog_welcome_bg', 'option');
 	$bg_url = $bg_img['sizes']['background-fullscreen'];
+	$breadcrumbs_blog = get_field('breadcrumb_switch_blog', 'option');
 
 	$primary_color = get_field('primary_color', 'option');
 	$secondary_color = get_field('secondary_color', 'option');
@@ -25,15 +26,21 @@
 			</div>
 		</div>
 	</div>
-	<div class="">
-		<div class="container panel wysiwyg">
+	<div class="panel listing wysiwyg" <?php
+	if (!$breadcrumbs_blog) { ?>
+		style="padding-top:76px;"
+	<?php }
+	 ?>>
+		<div class="container">
 	 			<div class="row posts">
-				<div class="columns-10"><!-- columns-9 -->
+				<div class="columns-9"><!-- columns-9 -->
 
 					<?php if ( have_posts() ) : ?>
 
 
-						<p class="breadcrumbs"><?php echo the_breadcrumb(); ?></p>
+						<?php if ($breadcrumbs_blog): ?>
+							<p class="breadcrumbs"><?php echo the_breadcrumb(); ?></p>
+						<?php endif; ?>
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
@@ -47,6 +54,13 @@
 
 					<?php endif; ?>
 
+				</div>
+				<div <?php if (!$breadcrumbs_blog) : ?>
+					class="columns-3 no-bc"
+				<?php else :?>
+					class="columns-3"
+				<?php endif; ?>>
+					<?php get_sidebar(); ?>
 				</div>
 	 		</div>
  		</div>

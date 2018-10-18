@@ -32,35 +32,35 @@
 		$font_select = get_field('font_pairing', 'option');
 		if ($font_select == 1) {
 			echo '<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">';
-			$sf_css = "font-family: 'Karla', sans-serif; font-weight:400 !important;";
-			$pf_css = "font-family: 'Karla', sans-serif; font-weight:700 !important;";
+			$sf_css = "font-family: 'Karla', sans-serif;";
+			$pf_css = "font-family: 'Karla', sans-serif;";
 		} elseif($font_select == 2){
 			echo '<link href="https://fonts.googleapis.com/css?family=Quando" rel="stylesheet">';
 			echo '<link href="https://fonts.googleapis.com/css?family=Karla:400" rel="stylesheet">';
-			$sf_css = "font-family: 'Karla', sans-serif; font-weight:400 !important;";
+			$sf_css = "font-family: 'Karla', sans-serif;";
 			$pf_css = "font-family: 'Quando', serif;";
 		} elseif($font_select == 3){
 			echo '<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">';
 			echo '<link href="https://fonts.googleapis.com/css?family=Karla:400" rel="stylesheet">';
-			$sf_css = "font-family: 'Karla', sans-serif; font-weight:400 !important;";
+			$sf_css = "font-family: 'Karla', sans-serif;";
 			$pf_css = "font-family: 'Abel', sans-serif;";
 		} elseif($font_select == 4){
 			echo '<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,400" rel="stylesheet">';
-			$sf_css = "font-family: 'Noto Serif KR', sans-serif; font-weight:300 !important;";
-			$pf_css = "font-family: 'Noto Serif KR', sans-serif; font-weight:900 !important;";
+			$sf_css = "font-family: 'Noto Serif KR', sans-serif;";
+			$pf_css = "font-family: 'Noto Serif KR', sans-serif;";
 		} elseif ($font_select == 5) {
 			echo '<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">';
 			echo '<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">';
 			$sf_css = "font-family: 'Cabin', sans-serif;";
-			$pf_css = "font-family: 'Abril Fatface', cursive;";
+			$pf_css = "font-family: 'Abril Fatface', serif;";
 		} elseif ($font_select == 6) {
 			echo '<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Bitter:400,400i,700" rel="stylesheet">';
 			$sf_css = "font-family: 'Bitter', serif;";
-			$pf_css = "font-family: 'Alfa Slab One', serif; font-weight:normal !important;";
+			$pf_css = "font-family: 'Alfa Slab One', serif;";
 		} else {
 			echo '<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">';
-			$sf_css = "font-family: 'Karla', sans-serif; font-weight:400 !important;";
-			$pf_css = "font-family: 'Karla', sans-serif; font-weight:700 !important;";
+			$sf_css = "font-family: 'Karla', sans-serif;";
+			$pf_css = "font-family: 'Karla', sans-serif;";
 		};
 
 		// $primary_font = get_field('primary_font_code', 'option');
@@ -148,6 +148,7 @@
 		$tertiary_color = get_field('tertiary_color', 'options');
 		$custom_color_switch = get_field('custom_color_on_or_off', 'option');
 		$custom_footer_color = get_field('custom_footer_color', 'option');
+		$wg_center = get_field('wg_center', 'option');
 	?>
 
 	<style>
@@ -165,6 +166,18 @@
 		}
 		input[type="submit"]{
 			color: <?php if($custom_color_switch){echo $custom_footer_color;}else{echo $primary_color;};?>;
+		}
+		#sidebar h3{
+			color:<?php echo $primary_color; ?>;
+		}
+		#sidebar input[type="submit"]{
+			background-color:<?php echo $primary_color; ?>;
+			color:#fff;
+			border-color:<?php echo $primary_color; ?>;
+		}
+		#sidebar input[type="submit"]:hover{
+			color:<?php echo $primary_color; ?>;
+			background-color: #fff;
 		}
 		.panel.wysiwyg a{
 			color: <?php echo $tertiary_color; ?>;
@@ -193,6 +206,13 @@
 		.listing-card a{
 			color: <?php echo $secondary_color; ?>;
 		}
+		<?php
+		// var_dump($wg_center);
+		if ($wg_center) { ?>
+			.welcome-gate .sign{
+				text-align: center;
+			}
+		<?php } ?>
 	</style>
 
 	<?php wp_head(); ?>

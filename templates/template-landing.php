@@ -6,6 +6,7 @@
 	$bg_img = get_field('background_image');
 	$bg_url = $bg_img['url'];
 	$bg_filter = get_field('bg_img_filter');
+	$breadcrumbs = get_field('breadcrumb_switch');
 
 	$primary_color = get_field('primary_color', 'option');
 		$secondary_color = get_field('secondary_color', 'option');
@@ -38,30 +39,40 @@
 			</svg>
 		</a> -->
 	</div>
-	<div class="panel listing">
+	<div class="panel listing" <?php
+	if (!$breadcrumbs) { ?>
+		style="padding-top:76px;"
+	<?php }
+	 ?>>
 		<div class="container">
 			<div class="row">
-				<p class="breadcrumbs">
-					 <?php if( is_page() ) :
-						 if( $ancs = array_reverse(get_ancestors($post->ID,'page')) ) {
-							  foreach( $ancs as $anc ) {
-								  $this_link = get_permalink($anc);
-									?>
-								  <a href="<?php echo $this_link; ?>" >
+				<?php
+				if ($breadcrumbs) {?>
+					<p class="breadcrumbs">
+						 <?php if( is_page() ) :
+							 if( $ancs = array_reverse(get_ancestors($post->ID,'page')) ) {
+								  foreach( $ancs as $anc ) {
+									  $this_link = get_permalink($anc);
+										?>
+									  <a href="<?php echo $this_link; ?>" >
+									  <?php
+									  echo get_page( $anc )->post_title . '</a> > '; ?>
 								  <?php
-								  echo get_page( $anc )->post_title . '</a> > '; ?>
-							  <?php
-							  }
-						 }
-						 echo $post->post_title;
-					endif; ?>
-				</p>
-				<div class="columns-12 page-callout">
-					<?php
-					$callout = get_field('page_callout');
-					?>
-					<h3 class="pf"><?php echo $callout; ?></h3>
-				</div>
+								  }
+							 }
+							 echo $post->post_title;
+						endif; ?>
+					</p>
+				<?php }
+				?>
+				<?php
+				$callout = get_field('page_callout');
+				if (!empty($callout)):?>
+					<div class="columns-12 page-callout">
+						<h3 class="pf"><?php echo $callout; ?></h3>
+					</div>
+				<?php endif;
+				?>
 			</div>
 		</div>
 		<div class="container">

@@ -4,7 +4,7 @@
 	<?php
 	$bg_img = get_field('background_image');
 	$bg_url = $bg_img['sizes']['background-fullscreen'];
-
+	$breadcrumbs = get_field('breadcrumb_switch');
 	$primary_color = get_field('primary_color', 'option');
 	$secondary_color = get_field('secondary_color', 'option');
 	$tertiary_color = get_field('tertiary_color', 'options');
@@ -25,12 +25,20 @@
 		</div>
 	</div>
 
-	<div class="panel page wysiwyg">
+	<div class="panel page wysiwyg" <?php
+	if (!$breadcrumbs) { ?>
+		style="padding-top:76px;"
+	<?php }
+	 ?>>
 		<div class="container">
 			<div class="row">
+				<?php
+				if ($breadcrumbs) {?>
 				<p class="breadcrumbs">
 					<?php echo the_breadcrumb(); ?>
 				</p>
+			<?php }
+			?>
 				<?php $callout = get_field('page_callout');
 
 				if($callout != ''){ ?>

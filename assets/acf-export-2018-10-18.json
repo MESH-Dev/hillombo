@@ -331,6 +331,68 @@
                 "maxlength": ""
             },
             {
+                "key": "field_5bc7caa282268",
+                "label": "Breadcrums On or Off: Blog",
+                "name": "breadcrumb_switch_blog",
+                "type": "true_false",
+                "instructions": "Use this switch to turn off breadcrumbs for the blog archive and blog category archive pages.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            },
+            {
+                "key": "field_5bc7ced2b028d",
+                "label": "Blog Title",
+                "name": "blog_title",
+                "type": "text",
+                "instructions": "Enter the title of your blog page here. The same as other welcome gate titles, this is limited to 46 characters max including spaces.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": 46
+            },
+            {
+                "key": "field_5bc7cf3aae2e3",
+                "label": "Blog Welcome Gate Background Image",
+                "name": "blog_welcome_bg",
+                "type": "image",
+                "instructions": "Enter the image to use as your blog's welcome gate background image.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
                 "key": "field_5abbffcc1d191",
                 "label": "Contact Form Shortcode",
                 "name": "contact_form_shortcode",
@@ -470,6 +532,25 @@
                     "id": ""
                 },
                 "default_value": ""
+            },
+            {
+                "key": "field_5bc7b940e8cb2",
+                "label": "Centered Welcome Gate Text",
+                "name": "wg_center",
+                "type": "true_false",
+                "instructions": "Would you like the text in your welcome gates to be centered instead of left aligned? Turn this option on.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
             }
         ],
         "location": [
@@ -599,6 +680,25 @@
                     "id": ""
                 },
                 "default_value": ""
+            },
+            {
+                "key": "field_5bc7c13ca3c68",
+                "label": "Breadcrums On or Off",
+                "name": "breadcrumb_switch",
+                "type": "true_false",
+                "instructions": "Use this switch to turn off breadcrumbs for this page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
             }
         ],
         "location": [
@@ -1226,6 +1326,48 @@
         "hide_on_screen": [
             "the_content"
         ],
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5bc7c674f3bf4",
+        "title": "Post Breadcrumbs",
+        "fields": [
+            {
+                "key": "field_5bc7c68728334",
+                "label": "Breadcrums On or Off",
+                "name": "breadcrumb_switch",
+                "type": "true_false",
+                "instructions": "Use this switch to turn off breadcrumbs for this page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "On",
+                "ui_off_text": "Off"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
         "active": 1,
         "description": ""
     },

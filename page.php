@@ -56,12 +56,14 @@
 						 echo $post->post_title;
 					endif; ?>
 				</p>
-				<div class="columns-12 page-callout">
-					<?php
-					$callout = get_field('page_callout');
-					?>
-					<h3 class="pf"><?php echo $callout; ?></h3>
-				</div>
+				<?php
+				$callout = get_field('page_callout');
+				if (!empty($callout)):?>
+					<div class="columns-12 page-callout">
+						<h3 class="pf"><?php echo $callout; ?></h3>
+					</div>
+				<?php endif;
+				?>
 			</div>
 		</div>
 		<div class="container">
