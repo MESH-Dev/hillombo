@@ -101,13 +101,11 @@
 								$width_class = 'columns-3';
 							}
 							if(have_rows('cards')): while(have_rows('cards')): the_row();
+							$card_img = get_sub_field('card_image');
+							$card_img_url = $card_img['sizes']['medium_large'];
+							$card_link = get_sub_field('card_link');
 							?>
-								<div class="card <?php echo $width_class ?>">
-									<?php
-									$card_img = get_sub_field('card_image');
-									$card_img_url = $card_img['sizes']['medium_large'];
-									$card_link = get_sub_field('card_link');
-									?>
+								<div class="card <?php echo $width_class; if(empty($card_link)){ echo ' nohover'; } ?>">
 									<a <?php if(!empty($card_link)){ ?> href="<?php echo $card_link ?>" <?php }; ?>>
 										<img src="<?php echo $card_img_url ?>" alt="">
 										<div class="text">

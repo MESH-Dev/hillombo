@@ -1621,33 +1621,39 @@ footer form p {
     margin-bottom: 0px;
   }
 }
-/* line 357, sass/modules/_modules.scss */
+/* line 360, sass/modules/_modules.scss */
+.card.nohover a:hover img {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+/* line 368, sass/modules/_modules.scss */
 .card .text {
   max-width: 255px;
   margin: 0 auto;
 }
-/* line 361, sass/modules/_modules.scss */
+/* line 372, sass/modules/_modules.scss */
 .card a {
   color: #FFFFFF;
 }
-/* line 363, sass/modules/_modules.scss */
+/* line 374, sass/modules/_modules.scss */
 .card a:hover {
   text-decoration: none;
 }
-/* line 365, sass/modules/_modules.scss */
+/* line 376, sass/modules/_modules.scss */
 .card a:hover img {
   -webkit-transform: translateY(-8px);
   -ms-transform: translateY(-8px);
   transform: translateY(-8px);
 }
-/* line 372, sass/modules/_modules.scss */
+/* line 383, sass/modules/_modules.scss */
 .card h3 {
   font-size: 2.8rem;
   letter-spacing: 0px;
   line-height: 1.4;
   font-weight: 400;
 }
-/* line 378, sass/modules/_modules.scss */
+/* line 389, sass/modules/_modules.scss */
 .card p {
   color: #FFFFFF;
   font-weight: 200;
@@ -1655,7 +1661,7 @@ footer form p {
   letter-spacing: 0.47px;
   line-height: 25px;
 }
-/* line 386, sass/modules/_modules.scss */
+/* line 397, sass/modules/_modules.scss */
 .card img {
   transition: transform 0.2s ease-in-out;
   max-height: 140px;
@@ -1663,51 +1669,51 @@ footer form p {
   margin-bottom: 2rem;
 }
 
-/* line 395, sass/modules/_modules.scss */
+/* line 406, sass/modules/_modules.scss */
 .listing-card {
   position: relative;
 }
 @media screen and (max-width: 750px) {
-  /* line 401, sass/modules/_modules.scss */
+  /* line 412, sass/modules/_modules.scss */
   .listing-card [class*='columns-'] {
     padding: 0;
   }
 }
 @media screen and (max-width: 750px) {
-  /* line 395, sass/modules/_modules.scss */
+  /* line 406, sass/modules/_modules.scss */
   .listing-card {
     margin-bottom: 20px;
   }
 }
-/* line 410, sass/modules/_modules.scss */
+/* line 421, sass/modules/_modules.scss */
 .listing-card.listing-grid .item-text {
   padding: 0;
   min-height: unset;
 }
 @media screen and (max-width: 750px) {
-  /* line 410, sass/modules/_modules.scss */
+  /* line 421, sass/modules/_modules.scss */
   .listing-card.listing-grid .item-text {
     padding: 0;
   }
 }
-/* line 416, sass/modules/_modules.scss */
+/* line 427, sass/modules/_modules.scss */
 .listing-card.listing-grid .item-text h4 {
   padding: 15px 0;
   margin-bottom: 0;
 }
 @media screen and (max-width: 750px) {
-  /* line 416, sass/modules/_modules.scss */
+  /* line 427, sass/modules/_modules.scss */
   .listing-card.listing-grid .item-text h4 {
     font-size: 3rem;
     padding-top: 0;
   }
 }
-/* line 425, sass/modules/_modules.scss */
+/* line 436, sass/modules/_modules.scss */
 .listing-card.listing-grid .read-more {
   position: relative;
   display: block;
 }
-/* line 430, sass/modules/_modules.scss */
+/* line 441, sass/modules/_modules.scss */
 .listing-card .thumbnail {
   height: 280px;
   background-size: contain;
@@ -1715,25 +1721,25 @@ footer form p {
   background-position: center;
 }
 @media screen and (max-width: 750px) {
-  /* line 430, sass/modules/_modules.scss */
+  /* line 441, sass/modules/_modules.scss */
   .listing-card .thumbnail {
     margin-bottom: 20px;
   }
 }
-/* line 439, sass/modules/_modules.scss */
+/* line 450, sass/modules/_modules.scss */
 .listing-card .item-text {
   padding-left: 20px;
   position: relative;
   min-height: 280px;
 }
 @media screen and (max-width: 750px) {
-  /* line 439, sass/modules/_modules.scss */
+  /* line 450, sass/modules/_modules.scss */
   .listing-card .item-text {
     padding: 0;
     min-height: unset;
   }
 }
-/* line 447, sass/modules/_modules.scss */
+/* line 458, sass/modules/_modules.scss */
 .listing-card .item-text h4 {
   font-size: 2.4rem;
   letter-spacing: .5px;
@@ -1742,14 +1748,14 @@ footer form p {
   margin-bottom: 10px;
 }
 @media screen and (max-width: 1060px) {
-  /* line 447, sass/modules/_modules.scss */
+  /* line 458, sass/modules/_modules.scss */
   .listing-card .item-text h4 {
     font-size: 3rem;
     line-height: normal;
     padding-top: 0;
   }
 }
-/* line 459, sass/modules/_modules.scss */
+/* line 470, sass/modules/_modules.scss */
 .listing-card .item-text p {
   font-size: 1.4rem;
   letter-spacing: 0.41px;
@@ -1757,22 +1763,22 @@ footer form p {
   font-weight: 400;
   color: #909090;
 }
-/* line 466, sass/modules/_modules.scss */
+/* line 477, sass/modules/_modules.scss */
 .listing-card .item-text a {
   width: 100%;
   font-size: 2rem;
   text-decoration: none;
   font-weight: 400;
 }
-/* line 471, sass/modules/_modules.scss */
+/* line 482, sass/modules/_modules.scss */
 .listing-card .item-text a:hover {
   text-decoration: none;
 }
-/* line 473, sass/modules/_modules.scss */
+/* line 484, sass/modules/_modules.scss */
 .listing-card .item-text a:hover::after {
   width: 50%;
 }
-/* line 477, sass/modules/_modules.scss */
+/* line 488, sass/modules/_modules.scss */
 .listing-card .item-text a::after {
   content: '';
   display: block;
@@ -1782,25 +1788,25 @@ footer form p {
   transition: all 0.2s ease-in-out;
   margin-top: 5px;
 }
-/* line 488, sass/modules/_modules.scss */
+/* line 499, sass/modules/_modules.scss */
 .listing-card .read-more {
   position: absolute;
   bottom: 0;
 }
 @media screen and (max-width: 750px) {
-  /* line 488, sass/modules/_modules.scss */
+  /* line 499, sass/modules/_modules.scss */
   .listing-card .read-more {
     position: relative;
   }
 }
 
-/* line 497, sass/modules/_modules.scss */
+/* line 508, sass/modules/_modules.scss */
 .page-callout, .panel.wysiwyg .page-callout {
   margin-bottom: 63px;
   padding-left: 20px;
   border-left: 2px solid;
 }
-/* line 501, sass/modules/_modules.scss */
+/* line 512, sass/modules/_modules.scss */
 .page-callout h3, .panel.wysiwyg .page-callout h3 {
   margin-bottom: 0;
   color: #4d4d4d;
@@ -1810,7 +1816,7 @@ footer form p {
   font-weight: 400;
 }
 
-/* line 515, sass/modules/_modules.scss */
+/* line 526, sass/modules/_modules.scss */
 .clearfix {
   clear: both;
 }
