@@ -41,10 +41,11 @@ function the_breadcrumb() {
                 echo " > ";
                 //the_title();
             //echo " > ";
-                $cats = get_the_category( get_the_ID() );
-                $cat = array_shift($cats);
-                echo '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $cat->name ) ) . '">'. $cat->name .'</a>';
-                echo " > ";
+                echo '<a href='.get_page_link(get_option('page_for_posts')).'>'.get_the_title(get_option('page_for_posts')).'</a>';
+                // $cats = get_the_category( get_the_ID() );
+                // $cat = array_shift($cats);
+                // echo '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $cat->name ) ) . '">'. $cat->name .'</a>';
+                 echo " > ";
                 the_title();
             }
         } elseif (is_page()) {
