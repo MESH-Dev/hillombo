@@ -54,5 +54,8 @@ remove_action( 'wp_head','wp_shortlink_wp_head');
 add_theme_support('html5');
 add_theme_support('automatic-feed-links');
 
+## Disable Editing in Dashboard
+define('DISALLOW_FILE_EDIT', true);
+
 
 ?>
