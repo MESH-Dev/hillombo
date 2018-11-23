@@ -59,6 +59,8 @@
 						foreach($the_terms as $cats){
 							$cat .= $cats->name.$separator;
 						}
+						$image = get_the_post_thumbnail('large');
+						//return $image;
 					?>
 					<h1><?php the_title(); ?></h1>
 

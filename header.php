@@ -127,7 +127,11 @@
 	================================================== -->
 	<?php
 	$logo = get_field('site_logo', 'option');
+	//Header logo
 	$logo_url = $logo['sizes']['medium'];
+	//Facebook share logo & more - full size
+	$logo_full = $logo['sizes']['large'];
+	//Used for Favicon
 	$favicon_url = $logo['sizes']['small'];
 	?>
 	<link rel="shortcut icon" href="<?php echo $favicon_url ?>">
@@ -216,6 +220,29 @@
 	</style>
 
 	<?php wp_head(); ?>
+	<!-- OG Tags -->
+	
+
+	<meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="<?php echo get_the_title(); ?>" />
+	<?php if (has_excerpt($post->ID)) {?>
+	<meta property="og:description" content="<?php echo get_the_excerpt($post->ID); ?>" />
+	<?php } ?>
+	<?php if(is_single()){ 
+		global $post;
+		setup_postdata($post);
+		$pid = $post->ID;
+		$image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $pid ), 'medium' );
+		$image = $image_array[0];
+
+
+		?>
+	<meta property="og:image" content="<?php echo $image; ?>" />
+	<?php }else{?>
+	<meta property="og:image" content="<?php echo $logo_full; ?>" />
+
+	<?php } ?>
 
 </head>
 
