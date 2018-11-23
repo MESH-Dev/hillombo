@@ -33,10 +33,17 @@ function the_breadcrumb() {
         echo get_option('home');
         echo '">';
         bloginfo('name');
-        echo "</a>  > ";
+        echo "</a>  ";
         if (is_category() || is_single()) {
-            the_category('title_li=');
-            if (is_single()) {
+          if(is_category()){
+            single_term_title();
+           }elseif (is_single()) {
+                echo " > ";
+                //the_title();
+            //echo " > ";
+                $cats = get_the_category( get_the_ID() );
+                $cat = array_shift($cats);
+                echo '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $cat->name ) ) . '">'. $cat->name .'</a>';
                 echo " > ";
                 the_title();
             }

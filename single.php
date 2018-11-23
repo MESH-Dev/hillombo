@@ -24,7 +24,7 @@
 			</div>
 		</div>
 	</div>
-
+	<?php var_dump(the_category("title_li="));?>
 	<div class="panel page wysiwyg" <?php
 	if (!$breadcrumbs) { ?>
 		style="padding-top:76px;"
