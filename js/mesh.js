@@ -54,13 +54,15 @@ jQuery(document).ready(function($){
       textPanels = document.getElementsByClassName('panel wysiwyg'),
       footerLeft = document.getElementById('left-col'),
       footerRight = document.getElementById('right-col');
-
+      
+  if(welcomeTitle){
    welcomeAnim.set(welcomeTitle, {css:{transform:"translateY(40px)", opacity:0}})
       .set(welcomeDesc, {css:{transform:"translateY(30px)", opacity:0}})
       .set(scrollLink, {css:{opacity:0}})
       .to(welcomeTitle, 0.5, {css:{transform:"translateY(0px)", opacity:1}, ease: Power3.easeInOut, delay: 0.4})
       .to(welcomeDesc, 0.5, {css:{transform:"translateY(0px)", opacity:1}, ease: Power2.easeInOut, delay: -0.1})
       .to(scrollLink, 0.5, {css:{opacity:1}, ease: Power2.easeInOut});
+   }
 
    if (introPanels) {
       for (var i = 0; i < introPanels.length; i++) {

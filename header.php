@@ -235,13 +235,19 @@
 		$pid = $post->ID;
 		$image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $pid ), 'medium' );
 		$image = $image_array[0];
-
+		$image_height = $image_array[1];
+		$image_width = $image_array[2];
+		//var_dump($image_array);
 
 		?>
 	<meta property="og:image" content="<?php echo $image; ?>" />
+	<meta property="og:image:width" content="<?php echo $image_width; ?>" />
+	<meta property="og:image:height" content="<?php echo $image_height; ?>" />
+
 	<?php }else{?>
 	<meta property="og:image" content="<?php echo $logo_full; ?>" />
-
+	<meta property="og:image:width" content="<?php echo $image_width; ?>" />
+	<meta property="og:image:height" content="<?php echo $image_height; ?>" />
 	<?php } ?>
 
 </head>
@@ -277,7 +283,7 @@
 										'echo'            => true,
 										'fallback_cb'     => 'wp_page_menu',
 										'before'          => '',
-										'after'           => '',
+										'after'           => '<div class="sub-trigger"></div>',
 										'link_before'     => '',
 										'link_after'      => '',
 										'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',

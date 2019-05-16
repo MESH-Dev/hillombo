@@ -54,6 +54,43 @@ function the_breadcrumb() {
     }
 }
 
+/* Display post thumbnail meta box including description */
+//if(is_single()){
+add_filter( 'admin_post_thumbnail_html', 'post_thumbnail_add_description', 10, 2 );
+//}
+
+function post_thumbnail_add_description( $content, $post_id ){
+$post = get_post( $post_id );
+$post_type = $post->post_type;
+//$extra = '';
+  //$extra = '<br>Recommended image size 800px x 800px';
+if($post_type == 'post'){
+    $content .= '<p><label for=\"html\">This image will be used for Facebook shares.  Absolute minimum for Facebook share image is 200px wide x 200px tall for a small image.  To provide a large image for Facebook sharing, add an image that is 600x315 pixels at a minimum, but 1200x630 or larger is preferred (up to 5MB).</label></p>';
+    return $content;
+    return $post_id;
+  }
+}
+//if(is_single()){
+add_filter( 'gettext', 'wpse22764_gettext', 10, 3 );
+//}
+function wpse22764_gettext( $translation, $original, $post_id)
+{
+  //var_dump($post_id);
+  //$post_type = $post->post_type;
+  //if($post_type == 'post'){
+    if ( 'Excerpt' == $original ) {
+        return 'Curated excerpt';
+    }else{
+        $pos = strpos($original, 'Excerpts are optional hand-crafted summaries of your');
+        if ($pos !== false) {
+            return  'Add a brief custom description that can be used for social shares';
+        }
+    }
+    return $translation;
+  //}
+}
+
+
 /**
  * Filter the except length to 20 words.
  *
